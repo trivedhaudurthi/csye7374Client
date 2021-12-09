@@ -1,0 +1,35 @@
+.product-container{
+    height: 200px;
+    width: 120px;
+    display: flex;
+    padding: 4px;
+    box-sizing: content-box;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    border: 1px solid black;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.product-image-container{
+
+    height: 80px;
+    width: 80px;
+    
+}
+
+.product-image{
+    width: 100%;
+    height: 100%;
+}
+.product-info{
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.product-container:hover{
+    border-color: blue;
+    box-shadow: 2px 2px 2px 2px gray
+}
