@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.successAlert{
+  background-color: #b2fab4;
+}
+
+.failureAlert{
+  background-color: #ff6f60;
+}
+
+.alert{
+  height: 40px;
+  box-sizing: content-box;
+  padding: 5px;
+}
