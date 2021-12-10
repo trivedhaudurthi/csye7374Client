@@ -3,4 +3,5 @@ React project for the app
 
 cd client
 npm install -> just for the first time you run the project
+npm install react-bootstrap bootstrap -> just for the first time you run the project
 npm start
