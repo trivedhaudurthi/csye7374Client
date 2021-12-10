@@ -1,10 +1,19 @@
 import React from "react";
 import logo from '../logo.svg';
 import '../componentStyles/product.styles.css';
-const product = (props) => {
+import { useNavigate } from "react-router-dom";
+
+const Product = (props) => {
+
+    let navigate = useNavigate();
+
+    const onClick = (event)=>{
+        event.preventDefault();
+        navigate(`/product/${props.id}`,{replace:true})
+    }
 
     return (
-        <div className="product-container">
+        <div className="product-container" onClick={onClick}>
             <div className="product-image-container">
                 <img src={logo} alt="product" className="product-image"/>
             </div>
@@ -19,4 +28,4 @@ const product = (props) => {
     )
 }
 
-export default product;
+export default Product;

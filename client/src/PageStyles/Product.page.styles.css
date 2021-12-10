@@ -1,0 +1,28 @@
+.product-page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.product-page-info{
+    width: 300px;
+}
+.product-page-image{
+    height: 500px;
+    width: 500px;
+}
+.product-page-seller-label{
+    margin-bottom: 5px;
+}
+.product-page-seller-name{
+    color: red;
+}
+.product-page-quantity-input{
+    width: 15px;
+}
+
+.product-page-quantity{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}

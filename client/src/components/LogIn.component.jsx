@@ -28,15 +28,15 @@ class LoginForm extends React.Component {
                 email:this.state.email,
                 password:this.state.password
             });
-
-            localStorage.setItem("auth",response.data);
-            localStorage.setItem("username",this.email.split("@")[0]);
+            
+            localStorage.setItem("auth",response.data.jwt);
+            localStorage.setItem("username",this.state.email.split("@")[0]);
             this.setState({...this.state,successResponse:"Logged in successfully",failureResponse:null});
         }
         catch(ex){
             console.log(ex);
-            localStorage.setItem("auth",null);
-            localStorage.setItem("username",null);
+            localStorage.setItem("auth","");
+            localStorage.setItem("username","");
             this.setState({...this.state,failureResponse:ex,successResponse:null});
         }
     }

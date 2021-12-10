@@ -24,12 +24,12 @@ class HomeScreen extends React.Component{
         }
     }
     renderProducts(){
-        console.log(this.state.products);
+        // console.log(this.state.products);
         return (
             <div className ="home-products-container">
                 {
-                    this.state.products.map((product)=>{
-                        return <Product {...product} />
+                    this.state.products.map((product,index)=>{
+                        return <Product {...product} key = {index} />
                     })
                 }
             </div>
