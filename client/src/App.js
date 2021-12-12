@@ -5,6 +5,7 @@ import HomeScreen from './pages/Home';
 import SignInPage from './pages/SignIn';
 import ProductPage from './pages/Product.page';
 import Cart from './pages/Cart.page';
+import Orderspage from './pages/Orders';
 function App() {
   return (
     <div>
@@ -15,6 +16,7 @@ function App() {
           <Route path=":productid" element={<ProductPage/>} />
         </Route>
         <Route exact={true} path ="/cart" element={<Cart/>}></Route>
+        <Route exact={true} path ="/orders" element={<Orderspage/>}></Route>
       </Routes>
     </div>
   );

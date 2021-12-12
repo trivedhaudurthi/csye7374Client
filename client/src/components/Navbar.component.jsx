@@ -25,9 +25,13 @@ class Navbar extends React.Component{
         if(!username||!data){
             return;
         }
-        const token = data;
+        const headers = {
+            headers: {
+                Authorization: 'Bearer ' + data
+            }
+        }
         try {
-            const response = await axios.post(url,token);
+            const response = await axios.post(url,{},headers);
             localStorage.setItem("role",response.data.message);
             this.setState({...this.state,username:username,role:response.data.message});
         } catch (error) {
@@ -73,9 +77,9 @@ class Navbar extends React.Component{
             </div>
             <div className="user-details-container">
                 {this.getUserName()}
-                {this.state.username?this.logout():this.login()}
                 {(this.state.username&&this.state.role==='user')&&<Link to={"/cart"}>Cart</Link>}
                 {this.state.username&&<Link to={"/orders"}>Orders</Link>}
+                {this.state.username?this.logout():this.login()}
             </div>
             {this.state.onLogin&&<Navigate to = {"/signin"} replace={true} />}
             {this.state.onHome&&<Navigate to = {"/"} replace={true} />}
