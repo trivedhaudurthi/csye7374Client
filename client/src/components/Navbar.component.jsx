@@ -13,7 +13,8 @@ class Navbar extends React.Component{
             role:"",
             failureResopnse: null,
             onLogin:false,
-            onHome:false
+            onHome:false,
+            onInfo:false,
         }
     }
 
@@ -62,27 +63,27 @@ class Navbar extends React.Component{
     }
 
     getUserName(){
-        return this.state.username?this.state.username:"";
+        return <Link to={"/info"} className='nav-link'>
+            {this.state.username}
+        </Link>
     }
 
     render(){
         return (
         <div className="nav-container">
-            <div className ="org-name" onClick={()=>{this.setState({...this.state,onHome:true})}}>
-                <h2>HumbleBoot</h2>
-            </div>
+            <Link to={"/"} className='nav-link'><h2>HumbleBoot</h2></Link>
             <div className ="search-bar-container">
                 <input type ="text" />
                 <input type="button" value ="search" />
             </div>
             <div className="user-details-container">
                 {this.getUserName()}
-                {(this.state.username&&this.state.role==='user')&&<Link to={"/cart"}>Cart</Link>}
-                {this.state.username&&<Link to={"/orders"}>Orders</Link>}
+                {(this.state.username&&this.state.role==='user')&&<Link to={"/cart"} className='nav-link'>Cart</Link>}
+                {this.state.username&&<Link to={"/orders"} className='nav-link'>Orders</Link>}
                 {this.state.username?this.logout():this.login()}
             </div>
             {this.state.onLogin&&<Navigate to = {"/signin"} replace={true} />}
-            {this.state.onHome&&<Navigate to = {"/"} replace={true} />}
+            {this.state.onInfo&&<Navigate to = {"/info"} replace={true}/>}
         </div>
         )
     }

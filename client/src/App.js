@@ -6,6 +6,7 @@ import SignInPage from './pages/SignIn';
 import ProductPage from './pages/Product.page';
 import Cart from './pages/Cart.page';
 import Orderspage from './pages/Orders';
+import UserInfo from './pages/UserInfo';
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
         </Route>
         <Route exact={true} path ="/cart" element={<Cart/>}></Route>
         <Route exact={true} path ="/orders" element={<Orderspage/>}></Route>
+        <Route exact={true} path ="/info" element={<UserInfo/>}></Route>
       </Routes>
     </div>
   );

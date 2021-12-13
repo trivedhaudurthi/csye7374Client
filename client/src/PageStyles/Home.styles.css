@@ -22,3 +22,17 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.username{
+    cursor: pointer;
+}
+
+.org-name{
+    cursor: pointer;
+}
+
+.nav-link{
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}

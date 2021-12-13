@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../components/Navbar.component";
 import * as constants from '../utils/constants';
 import '../PageStyles/Orders.styles.css';
