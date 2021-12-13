@@ -160,7 +160,7 @@ class UserInfo extends React.Component {
     renderProducts() {
         return this.state.products.map((product, index) => {
             return (
-                <div key={index} className="cart-product" onClick={(event)=>{this.onProductClicked(event,product)}}>
+                <div key={index} className="cart-product seller-product-item" onClick={(event)=>{this.onProductClicked(event,product)}}>
                     <h4 className="cart-product-name">{product.name}</h4>
                     <h4 className="cart-product-quantity">{`x${product.quantity}`}</h4>
                     <h4 className="cart-product-price">{`${product.price}`}</h4>

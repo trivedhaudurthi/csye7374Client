@@ -33,7 +33,7 @@ class SignupForm extends React.Component {
             
         }catch(ex){
             console.log(ex);
-            this.setState({...this.state,failureResponse:ex,successResponse:null});
+            this.setState({...this.state,failureResponse:`Unable to signup new user`,successResponse:null});
         }
         
     }
@@ -69,7 +69,7 @@ class SignupForm extends React.Component {
                     <input type="submit" value="Sign Up" />
                 </div>
                 {this.state.successResponse&&<AlertMessage isSuccess={true}>You have signed up</AlertMessage>}
-                {this.state.failureResponse&&<AlertMessage isSuccess={false}>Make sure to fill all the details</AlertMessage>}
+                {this.state.failureResponse&&<AlertMessage isSuccess={false}>{this.state.failureResponse}</AlertMessage>}
             </form>
         );
     }

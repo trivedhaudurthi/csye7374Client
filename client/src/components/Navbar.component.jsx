@@ -15,6 +15,7 @@ class Navbar extends React.Component{
             onLogin:false,
             onHome:false,
             onInfo:false,
+            onLogout:false,
         }
     }
 
@@ -43,7 +44,7 @@ class Navbar extends React.Component{
 
     onLogin = (event)=>{
         event.preventDefault();
-        this.setState({...this.state,onLogin:true});
+        this.setState({...this.state,onLogin:true,onLogout:false});
     }
 
     login() {
@@ -55,7 +56,7 @@ class Navbar extends React.Component{
         localStorage.setItem("username","");
         localStorage.setItem("auth","");
         localStorage.setItem("role","");
-        this.setState({...this.state,username:""});
+        this.setState({...this.state,username:"",onLogout:true,onLogin:false});
     }
 
     logout(){
@@ -84,6 +85,7 @@ class Navbar extends React.Component{
             </div>
             {this.state.onLogin&&<Navigate to = {"/signin"} replace={true} />}
             {this.state.onInfo&&<Navigate to = {"/info"} replace={true}/>}
+            {this.state.onLogout&&<Navigate to={"/signin"} replace={true} />}
         </div>
         )
     }

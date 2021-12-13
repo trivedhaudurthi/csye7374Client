@@ -35,15 +35,27 @@ class Orderspage extends React.Component {
         }
     }
 
-
+    rennderHeadings(){
+        var role = localStorage.getItem("role");
+        return (
+            <div className="order-product">
+                    <h4>Name</h4>
+                    <h4>Quantity</h4>
+                    <h4>{role==="seller"?'User':'Seller'}</h4>
+                    <h4>Ordered Time</h4>
+            </div>
+        )
+    }
     renderOrders() {
+        var role = localStorage.getItem("role");
         return this.state.orders.map((order, index) => {
+            var date = new Date(order.createdTime);
             return (
                 <div className="order-product" key={index}>
                     <div>{order.productName}</div>
                     <div>{order.quantity}</div>
-                    <div>{order.sellerName}</div>
-                    <div>{new Date(order.createdTime).toLocaleTimeString()}</div>
+                    <div>{role==="seller"?order.userName:order.sellerName}</div>
+                    <div>{`${date.getMonth()}-${date.getDate()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`}</div>
                 </div>
             )
         })
@@ -54,6 +66,7 @@ class Orderspage extends React.Component {
                 <Navbar />
                 <h2>Orders</h2>
                 <div className="cart-product-group">
+                    {this.rennderHeadings()}
                     {this.renderOrders()}
                 </div>
                 {this.state.failureState&&<AlertMessage isSuccess={false}>{this.state.failureState}</AlertMessage>}

@@ -6,7 +6,7 @@
 .cart-product-group{
     display: flex;
     border: 1px solid black;
-    width: 700px;
+    width: 900px;
     margin: 60px auto;
     flex-direction: column;
 
