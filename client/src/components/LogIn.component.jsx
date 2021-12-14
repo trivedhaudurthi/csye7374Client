@@ -44,6 +44,7 @@ class LoginForm extends React.Component {
     render() {
         return (
             <form className="signup-form-style" onSubmit={this.onSubmit}>
+                <legend className='payment-form-title'>Log In</legend>
                 <div className="signupdiv">
                     <label>Email</label>
                     <input type="text" name="email" value={this.state.email} onChange={this.onTextChange} />
